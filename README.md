@@ -1,4 +1,4 @@
-# Food-Recommendation
+# Personalized Food Recommendation
 
 In this project we will investigate these subjects:
 

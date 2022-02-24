@@ -18,10 +18,11 @@ def extract_items(df):
         if row['Items'] != 'Key Not Found':
             for item in row['Items']:
                 for key,value in item.items():
+                    if key.lower() == 'count':
+                        count = value
                     if key.lower() == 'menuitem':
-                        user_item_list.append((row['OrderId'],row['UserId'],value,row['RestaurantId'],row['Date'],row['Rating'],row['Comments'],row['Address']))
-
-    return user_item_list    
+                        user_item_list.append((row['OrderId'],row['UserId'],value,row['RestaurantId'],row['Date'],row['Rating'],row['Comments'],row['Address'], count))
+    return user_item_list
 
 
 def save_file(data, fname, dname):
